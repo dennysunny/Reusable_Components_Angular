@@ -1,0 +1,27 @@
+/* Reset some default styles for better consistency */
+body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the placeholder segment */
+.ui.placeholder.segment {
+  background-color: #f5f5f5; /* Background color for the segment */
+  border: 1px solid #ddd; /* Border for the segment */
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Style for the icon header within the segment */
+.ui.placeholder.segment .ui.icon.header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; /* Text color for the header */
+  margin-bottom: 20px;
+}
+
+/* Style for the default content within the segment */
+.ui.placeholder.segment ng-content {
+  font-size: 16px;
+  color: #666; /* Text color for the content */
+}

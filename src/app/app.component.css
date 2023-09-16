@@ -1,0 +1,45 @@
+/* Reset some default styles for better consistency */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Overall container styles */
+  .container {
+    font-family: Arial, sans-serif; /* Choose a suitable font */
+    background-color: #f5f5f5; /* Background color for the container */
+  }
+  
+  /* Navigation bar styles */
+  .navbar {
+    background-color: #333; /* Background color for the navbar */
+    color: #fff; /* Text color for the links */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #fff; /* Text color for the links */
+    padding: 10px 20px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .navbar a:hover {
+    background-color: #555; /* Darker background color on hover */
+  }
+  
+  .navbar a.active {
+    background-color: #007bff; /* Background color for the active link */
+  }
+  
+  /* Content area styles */
+  .content {
+    background-color: #fff; /* Background color for the content area */
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow to the content */
+    margin: 20px;
+    padding: 20px;
+  }
+  

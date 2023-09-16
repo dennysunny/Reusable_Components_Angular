@@ -1,0 +1,54 @@
+/* Reset some default styles for better consistency */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Style for the statistics container */
+  .statistics {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f5f5; /* Background color for the container */
+  }
+  
+  /* Style for each statistic item */
+  .statistic {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc; /* Border for each item */
+    border-radius: 5px;
+    background-color: #fff; /* Background color for each item */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow to each item */
+    padding: 20px;
+    flex-basis: calc(33.33% - 20px); /* Adjust the width as needed */
+    text-align: center;
+  }
+  
+  /* Style for the statistic value */
+  .value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Text color for the value */
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the statistic label */
+  .label {
+    font-size: 16px;
+    color: #666; /* Text color for the label */
+  }
+  
+  /* Add space between items on smaller screens */
+  @media (max-width: 768px) {
+    .statistics {
+      flex-direction: column;
+      align-items: center;
+    }
+    .statistic {
+      flex-basis: 100%;
+    }
+  }
+  

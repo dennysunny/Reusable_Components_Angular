@@ -1,0 +1,67 @@
+/* Apply styles to the parent container */
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Style the font options container */
+  .fontOptions {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the font option buttons */
+  .fontOptions button {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .fontOptions button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Style the font size input */
+  .fontOptions input[type="number"] {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 5px;
+  }
+  
+  /* Style the textarea */
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc; /* Gray border */
+    border-radius: 5px;
+    resize: vertical
+  }
+  
+  /* Style the "Post" button */
+  .post {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745; /* Green background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .post:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  

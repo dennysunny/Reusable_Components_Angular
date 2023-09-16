@@ -1,0 +1,27 @@
+/* Minimal CSS for the table */
+.ui.table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border: 1px solid #ddd;
+  }
+  
+  .ui.table th,
+  .ui.table td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .ui.table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  /* Optional: Add hover effect on rows */
+  .ui.table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  

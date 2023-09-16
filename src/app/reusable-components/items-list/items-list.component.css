@@ -1,0 +1,80 @@
+/* Reset some default styles for better consistency */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Style for the container */
+  .ui.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f5f5; /* Background color for the container */
+  }
+  
+  /* Style for each item */
+  .item {
+    display: flex;
+    border: 1px solid #ccc; /* Border for each item */
+    border-radius: 5px;
+    background-color: #fff; /* Background color for each item */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow to each item */
+    overflow: hidden;
+    transition: transform 0.2s ease;
+  }
+  
+  /* Style for the item image */
+  .image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Style for the content within each item */
+  .content {
+    padding: 10px;
+    flex-grow: 1;
+  }
+  
+  /* Style for the item header */
+  .header {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Text color for the header */
+    text-decoration: none;
+  }
+  
+  /* Style for the item meta */
+  .meta span {
+    font-size: 14px;
+    color: #666; /* Text color for the meta information */
+  }
+  
+  /* Style for the item description */
+  .description p {
+    font-size: 16px;
+    color: #444; /* Text color for the description */
+    margin-top: 10px;
+  }
+  
+  /* Style for the "Additional Details" section */
+  .extra {
+    font-size: 14px;
+    color: #007bff; /* Text color for the "Additional Details" section */
+    margin-top: 10px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .extra:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Add space between items on smaller screens */
+  @media (max-width: 768px) {
+    .ui.items {
+      flex-direction: column;
+    }
+  }
+  

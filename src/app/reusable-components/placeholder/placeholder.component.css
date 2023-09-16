@@ -1,0 +1,59 @@
+/* Styles for the loading placeholder */
+.loading-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Placeholder content styles */
+.placeholder-content {
+  width: 70%;
+  margin-bottom: 10px;
+}
+
+.placeholder-title {
+  height: 20px;
+  background-color: #eee;
+  width: 80%;
+}
+
+.placeholder-description {
+  height: 12px;
+  background-color: #f0f0f0;
+  width: 100%;
+}
+
+/* Loading animation styles */
+.loading-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.loading-bar {
+  height: 12px;
+  width: 80%;
+  background-color: #f0f0f0;
+  margin-bottom: 5px;
+  animation: loading 1s infinite alternate;
+}
+
+/* Keyframes for the loading animation */
+@keyframes loading {
+  0% {
+    opacity: 0.5;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

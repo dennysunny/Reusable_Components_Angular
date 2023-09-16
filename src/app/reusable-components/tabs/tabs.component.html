@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="left-pane">
+        <ul>
+            <li *ngFor="let option of options; let i = index" (click)="expandOption(i)">{{ option.title }}</li>
+        </ul>
+    </div>
+    <div class="right-pane">
+        <p *ngIf="expandedOption == null" class="startText" >To reveal the extended content, kindly click the button located on the left.</p>
+        <ng-container *ngIf="expandedOption !== null">
+            <div class="expandable-text">
+                <ng-container *ngIf="isCollapsed; else expandedContent">
+                  <!-- Display the first 200 characters of the content -->
+                  {{ selectedOption?.content | slice:0:500 }}...
+                  <button (click)="toggleCollapse()">Read More</button>
+                </ng-container>
+                <ng-template #expandedContent>
+                  <!-- Display the full content when not collapsed -->
+                  {{ selectedOption?.content }}
+                  <button (click)="toggleCollapse()">Read Less</button>
+                </ng-template>
+              </div>
+        </ng-container>
+    </div>
+</div>

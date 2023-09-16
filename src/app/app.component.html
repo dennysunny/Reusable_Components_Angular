@@ -1,0 +1,20 @@
+
+
+<div class="container">
+  <div class="navbar">
+    <a [routerLink]="['/accordion']" routerLinkActive="active" class="item">Accordion</a>
+    <a [routerLink]="['/modal']" routerLinkActive="active" class="item">Reusable component</a>
+    <a [routerLink]="['/input']" routerLinkActive="active" class="item">Input</a>
+    <a [routerLink]="['/table']" routerLinkActive="active" class="item">Table</a>
+    <a [routerLink]="['/placeholder']" routerLinkActive="active" class="item">Placeholder</a>
+    <a [routerLink]="['/tabs']" routerLinkActive="active" class="item">Tabs</a>
+    <a [routerLink]="['/items-list']" routerLinkActive="active" class="item">Items</a>
+    <a [routerLink]="['/statistics']" routerLinkActive="active" class="item">Statistics</a>
+    <a [routerLink]="['/uploads']" routerLinkActive="active" class="item">Uploads</a>
+  </div>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
