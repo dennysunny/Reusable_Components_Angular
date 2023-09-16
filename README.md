@@ -1,8 +1,8 @@
-Creating a detailed GitHub README file for your Angular project with reusable shared components is essential for providing clear documentation to potential users and collaborators. A well-structured README file helps others understand your project quickly and encourages collaboration. Here's a template you can follow:
 
-# Project Title
 
-Angular Reusable Shared Components
+# Angular Reusable Shared Components
+
+
 
 ## Table of Contents
 
