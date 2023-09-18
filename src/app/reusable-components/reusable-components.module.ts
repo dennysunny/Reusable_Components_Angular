@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { AccordionComponent } from './accordion/accordion.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
-import { ModalComponent } from './modal/modal.component';
 import { ItemsListComponent } from './items-list/items-list.component';
 import { InputComponent } from './input/input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TabsComponent } from './tabs/tabs.component';
 import { TableNormalComponent } from './table-normal/table-normal.component';
+import { PopupComponent } from './popup/popup.component';
 
 
 
@@ -17,11 +17,11 @@ import { TableNormalComponent } from './table-normal/table-normal.component';
     AccordionComponent,
     StatisticsComponent,
     PlaceholderComponent,
-    ModalComponent,
     ItemsListComponent,
     InputComponent,
     TabsComponent,
-    TableNormalComponent
+    TableNormalComponent,
+    PopupComponent
   ],
   imports: [
     CommonModule,
@@ -32,11 +32,11 @@ import { TableNormalComponent } from './table-normal/table-normal.component';
     AccordionComponent,
     StatisticsComponent,
     PlaceholderComponent,
-    ModalComponent,
     ItemsListComponent,
     InputComponent,
     TabsComponent,
-    TableNormalComponent
+    TableNormalComponent,
+    PopupComponent
   ]
 })
 export class ReusableComponentsModule { }

@@ -1,0 +1,68 @@
+ .popup-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+} 
+
+.popup{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid grey;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.popup :hover{
+    transform:  scaleX(101%)
+}
+.popup-title{
+    background-color: rgb(141, 133, 184);
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+}
+
+.popup-message{
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}
+
+.popup-buttons{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.popup-button.cancel{
+    background-color: red;
+    width: 25%;
+    border-radius: 5px;
+    border: 5px solid red;
+    color: wheat;
+    font-variant: small-caps;
+    padding: 5px;
+}
+
+.popup-button.okay{
+    background-color: rgb(54, 99, 246);
+    width: 25%;
+    border-radius: 5px;
+    border: 5px solid rgb(54, 99, 246);
+    color: wheat;
+    font-variant: small-caps;
+    padding: 5px;
+    
+}
+  

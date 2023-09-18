@@ -10,19 +10,19 @@ const routes: Routes = [
       import('./accordion/accordion.module').then((a) => a.AccordionModule),
   },
   {
-    path: 'modal',
-    loadChildren: () =>
-      import('./modal/modal.module').then((a) => a.ModalModule),
-  },
-  {
     path: 'table',
     loadChildren: () =>
       import('./table/table.module').then((a) => a.TableModule),
   },
   {
     path: 'input',
-    loadChildren: () => 
-      import('./input/input.module').then((a) => a.InputModule)
+    loadChildren: () =>
+      import('./input/input.module').then((a) => a.InputModule),
+  },
+  {
+    path: 'popup',
+    loadChildren: () =>
+      import('./popups/popup.module').then((a) => a.PopupModule),
   },
   {
     path: 'placeholder',
@@ -33,7 +33,10 @@ const routes: Routes = [
   },
   {
     path: 'tabs',
-    loadChildren: () => import('./tabs-example/tabs-example-module.module').then((a) => a.TabsExampleModuleModule),
+    loadChildren: () =>
+      import('./tabs-example/tabs-example-module.module').then(
+        (a) => a.TabsExampleModuleModule
+      ),
   },
   {
     path: 'items-list',

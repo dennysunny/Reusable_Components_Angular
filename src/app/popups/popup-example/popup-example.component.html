@@ -1,0 +1,13 @@
+
+<app-popup *ngIf = "isOpen"
+[popupHeader] = "Confirmation"
+[popupMessage] = "Message"
+[popupPositiveButton] = "PositiveAction"
+[popupNegetiveButton] = "NegetiveAction"
+(okayClicked)="handleOkayClick()"
+(cancelClicked)="handleCancelClick()"
+></app-popup>
+
+<h2 class="statusText" >{{clickStatus}}</h2>
+
+

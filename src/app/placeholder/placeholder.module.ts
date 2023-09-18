@@ -11,7 +11,6 @@ import { ReusableComponentsModule } from '../reusable-components/reusable-compon
 @NgModule({
   declarations: [
     PlaceholderExampleComponent,
-    TimesDirective
   ],
   imports: [
     CommonModule,
