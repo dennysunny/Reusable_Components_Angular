@@ -3,28 +3,23 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-popup-example',
   templateUrl: './popup-example.component.html',
-  styleUrls: ['./popup-example.component.css']
+  styleUrls: ['./popup-example.component.css'],
 })
-export class PopupExampleComponent  {
+export class PopupExampleComponent {
+  isOpen: boolean = true;
+  Confirmation = '';
+  Message = '';
+  PositiveAction = '';
+  NegetiveAction = '  ';
+  clickStatus!: string;
 
-  isOpen :boolean = true;
-  Confirmation = ""
-  Message = ""
-  PositiveAction = ""
-  NegetiveAction = "  "
-  clickStatus! :string;
-  
-
-  handleOkayClick(){
-    this.isOpen=false
-   this.clickStatus = "clicked okay"
-    
+  handleOkayClick() {
+    this.isOpen = false;
+    this.clickStatus = 'clicked okay';
   }
 
-  handleCancelClick(){
-    this.isOpen = false
-    this.clickStatus = "clicked cancel"
+  handleCancelClick() {
+    this.isOpen = false;
+    this.clickStatus = 'clicked cancel';
   }
-
-
 }
