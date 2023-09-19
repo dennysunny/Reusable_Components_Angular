@@ -1,17 +1,18 @@
-<div>
+<div class="textBox">
   <div class="fontOptions">
     <button (click)="isBold = !isBold">Bold</button>
     <button (click)="isItalic = !isItalic">Italic</button>
     <button (click)="isUnderline = !isUnderline">Underline</button>
-    <button>Font Size</button>
+    <section>Font Size:
     <input type="number" [(ngModel)]="fontSize" min="8" max="72" />
+    </section>
   </div>
   <textarea
     [(ngModel)]="data"
     (input)="adjustTextareaSize()"
     #myTextarea
-    rows="1"
-    cols="30"
+    rows="5"
+    cols="50"
     [style.font-weight]="isBold ? 'bold' : 'normal'"
     [style.font-style]="isItalic ? 'italic' : 'normal'"
     [style.text-decoration]="isUnderline ? 'underline' : 'none'"
@@ -19,7 +20,16 @@
   >
   </textarea>
   <p class="post" (click)="onSubmitComment()">Post</p>
+ 
 </div>
+
+<app-popup *ngIf="openPopUp" 
+[popupMessage] = "Message"
+[popupPositiveButton] = "PositiveAction"
+[popupNegetiveButton] = "NegetiveAction"
+(okayClicked)="handleOkayClick()"
+(cancelClicked)="handleCancelClick()"
+></app-popup>
 
 
 

@@ -8,6 +8,8 @@
     position: fixed;
     height: 100%;
     width: 100%;
+    backdrop-filter: blur(2px); /* Adjust the blur amount as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the background color and opacity */
 } 
 
 .popup{
@@ -18,6 +20,7 @@
     padding: 20px;
     width: 30%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #fff; /* Popup background color */
 }
 
 .popup :hover{

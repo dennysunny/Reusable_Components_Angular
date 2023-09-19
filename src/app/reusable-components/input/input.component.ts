@@ -14,13 +14,31 @@ export class InputComponent {
   isUnderline: boolean = false;
   fontSize: number = 16; 
 
+  Message = 'Do you want to post the message?';
+  PositiveAction = 'Post';
+  NegetiveAction = 'Discrad';
+  clickStatus!: string;
+
+  openPopUp: boolean = false;
+
   onSubmitComment() {
     this.postComment.emit(this.data);
-
+    this.openPopUp = true
   }
 
   adjustTextareaSize(){
 
   }
 
+  handleOkayClick() {
+    this.openPopUp = false;
+    this.clickStatus = 'clicked okay';
+  }
+
+  handleCancelClick() {
+    this.openPopUp = false;
+    this.clickStatus = 'clicked cancel';
+  }
 }
+
+
