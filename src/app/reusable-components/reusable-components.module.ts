@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TabsComponent } from './tabs/tabs.component';
 import { TableNormalComponent } from './table-normal/table-normal.component';
 import { PopupComponent } from './popup/popup.component';
+import { FormDataComponent } from './form-data/form-data.component';
 
 
 
@@ -21,7 +22,8 @@ import { PopupComponent } from './popup/popup.component';
     InputComponent,
     TabsComponent,
     TableNormalComponent,
-    PopupComponent
+    PopupComponent,
+    FormDataComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +38,8 @@ import { PopupComponent } from './popup/popup.component';
     InputComponent,
     TabsComponent,
     TableNormalComponent,
-    PopupComponent
+    PopupComponent,
+    FormDataComponent
   ]
 })
 export class ReusableComponentsModule { }

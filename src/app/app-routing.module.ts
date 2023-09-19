@@ -2,6 +2,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsComponent } from './forms/forms.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,10 @@ const routes: Routes = [
     path: 'uploads',
     loadChildren: () =>
       import('./uploads/uploads.module').then((a) => a.UploadsModule),
+  },
+
+  {
+    path: 'forms', component : FormsComponent
   },
 
   { path: '', component: HomeComponent },

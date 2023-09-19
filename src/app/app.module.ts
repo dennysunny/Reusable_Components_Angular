@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ReusableComponentsModule } from './reusable-components/reusable-components.module';
-import { PopupExampleComponent } from './popups/popup-example/popup-example.component';
+import { FormsComponent } from './forms/forms.component';
 
  
  @NgModule({
@@ -16,6 +16,7 @@ import { PopupExampleComponent } from './popups/popup-example/popup-example.comp
     AppComponent,
     HomeComponent,
     NotFoundComponent,
+    FormsComponent,
   ],
   imports: [
     BrowserModule,
