@@ -90,7 +90,7 @@ article .shimmer{
   rgba(255,255,255,0.5) 50%,
   rgba(255,255,255,0) 80%);
 
-  animation: shimmer 2s infinite linear;
+  animation: shimmer 2s infinite ;
 }
 
 
