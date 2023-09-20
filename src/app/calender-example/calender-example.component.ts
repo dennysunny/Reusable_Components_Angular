@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './calender-example.component.html',
   styleUrls: ['./calender-example.component.css']
 })
+
 export class CalenderExampleComponent implements OnInit {
 
   date :any;

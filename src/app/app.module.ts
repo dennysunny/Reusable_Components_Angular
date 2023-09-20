@@ -11,6 +11,7 @@ import { ReusableComponentsModule } from './reusable-components/reusable-compone
 import { FormsComponent } from './forms/forms.component';
 import { CalenderExampleComponent } from './calender-example/calender-example.component';
 import { FormsModule } from '@angular/forms';
+import { CalendarModule } from 'primeng/calendar';
 
  
  @NgModule({
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReusableComponentsModule,
-    FormsModule
+    FormsModule,
+    CalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
