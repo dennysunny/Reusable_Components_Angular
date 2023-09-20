@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsComponent } from './forms/forms.component';
+import { CalenderExampleComponent } from './calender-example/calender-example.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,10 @@ const routes: Routes = [
 
   {
     path: 'forms', component : FormsComponent
+  },
+
+  {
+    path: 'calender', component : CalenderExampleComponent 
   },
 
   { path: '', component: HomeComponent },

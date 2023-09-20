@@ -10,6 +10,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { TableNormalComponent } from './table-normal/table-normal.component';
 import { PopupComponent } from './popup/popup.component';
 import { FormDataComponent } from './form-data/form-data.component';
+import { CalenderComponent } from './calender/calender.component';
 
 
 
@@ -23,7 +24,8 @@ import { FormDataComponent } from './form-data/form-data.component';
     TabsComponent,
     TableNormalComponent,
     PopupComponent,
-    FormDataComponent
+    FormDataComponent,
+    CalenderComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +41,8 @@ import { FormDataComponent } from './form-data/form-data.component';
     TabsComponent,
     TableNormalComponent,
     PopupComponent,
-    FormDataComponent
+    FormDataComponent,
+    CalenderComponent
   ]
 })
 export class ReusableComponentsModule { }

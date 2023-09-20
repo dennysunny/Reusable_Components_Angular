@@ -1,0 +1,11 @@
+
+<div class="container">
+    <h3>Choose a date</h3>
+    <input type="date" [(ngModel)] = "date">
+</div>
+
+
+<app-calender *ngIf="date"
+ [selectedDate] = "date"
+></app-calender>
+
