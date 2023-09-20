@@ -11,9 +11,18 @@ import { TableNormalComponent } from './table-normal/table-normal.component';
 import { PopupComponent } from './popup/popup.component';
 import { FormDataComponent } from './form-data/form-data.component';
 import { CalenderComponent } from './calender/calender.component';
-
-
-
+import { CalendarModule } from 'primeng/calendar';
+import { CalendarIcon } from 'primeng/icons/calendar';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {
+  MatDateRangeSelectionStrategy,
+  DateRange,
+  MAT_DATE_RANGE_SELECTION_STRATEGY,
+} from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AccordionComponent,
@@ -30,7 +39,14 @@ import { CalenderComponent } from './calender/calender.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CalendarModule,
+    CalendarIcon,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatCardModule,
+    MatButtonModule,
+    MatFormFieldModule
   ],
   exports: [
     AccordionComponent,

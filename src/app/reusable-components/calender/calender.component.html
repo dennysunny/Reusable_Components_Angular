@@ -1,16 +1,51 @@
 
 
-<!-- <div class="card flex justify-content-center">
-    <p-calendar [(ngModel)]="date">
-        <ng-template pTemplate="header">Header</ng-template>
-        <ng-template pTemplate="footer">Footer</ng-template>
-    </p-calendar>
+
+
+<!-- <div class="myOverride">
+
+<p-calendar 
+[(ngModel)]="SelectedDatee" 
+styleClass="prime-slider-override"
+[inline]="true" 
+selectionMode="range" 
+[focusTrap]="true"
+dateFormat="dd.mm.yy"
+(onSelect)="selectRange($event)"
+>
+    <ng-template pTemplate="footer">
+        <hr>
+        <button (click)="GetDates(SelectedDatee)">Apply</button>
+    </ng-template>
+</p-calendar>
+
 </div> -->
 
-<p>--</p>
-<p>{{selectedDate}}</p>
+<!-- <mat-card class="demo-inline-calendar-card">
+    <mat-calendar [(selected)]="date1">
+        <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate placeholder="Start date" [(ngModel)]="date1" >
+            <input matEndDate placeholder="End date" [(ngModel)]="date2">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-calendar>
 
-<h4>PrimeNg Calendar Component</h4>
+
+</mat-card>
+
+    
+  <p>Selected date: {{selected}}</p> -->
+
+
+<mat-card  class="demo-inline-calendar-card" >
+    <mat-calendar
+    [selected]="selectedRangeValue" 
+    (selectedChange)="selectedChange($event)">
+    </mat-calendar>
+    <hr>
+    <button >Apply</button>
+</mat-card>
 
 
   

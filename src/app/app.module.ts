@@ -11,9 +11,10 @@ import { ReusableComponentsModule } from './reusable-components/reusable-compone
 import { FormsComponent } from './forms/forms.component';
 import { CalenderExampleComponent } from './calender-example/calender-example.component';
 import { FormsModule } from '@angular/forms';
-import { CalendarModule } from 'primeng/calendar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
- 
  @NgModule({
   declarations: [
     AppComponent,
@@ -23,11 +24,13 @@ import { CalendarModule } from 'primeng/calendar';
     CalenderExampleComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     ReusableComponentsModule,
     FormsModule,
-    CalendarModule
+    BrowserAnimationsModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

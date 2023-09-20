@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DateRange } from '@angular/material/datepicker';
+
+
 
 @Component({
   selector: 'app-calender-example',
@@ -6,14 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calender-example.component.css']
 })
 
-export class CalenderExampleComponent implements OnInit {
+export class CalenderExampleComponent  {
 
-  date :any;
+  date1! :DateRange<Date>;
+  date2! :DateRange<Date>;
 
-  constructor() { }
+ 
 
-  ngOnInit(): void {
-  }
+ 
+
+
+
 
 
 }
