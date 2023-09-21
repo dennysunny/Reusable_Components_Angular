@@ -24,6 +24,7 @@ import {
 } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
 @NgModule({
   declarations: [
     AccordionComponent,
@@ -48,7 +49,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatDividerModule
   ],
   exports: [
     AccordionComponent,
@@ -60,7 +62,8 @@ import { MatIconModule } from '@angular/material/icon';
     TableNormalComponent,
     PopupComponent,
     FormDataComponent,
-    CalenderComponent
+    CalenderComponent,
+    MatDividerModule
   ]
 })
 export class ReusableComponentsModule { }

@@ -9,12 +9,19 @@ button{
   float: right;
   width: 25%;
   display: flex;
+  justify-content: center;
 }
 
 
 
 .demo-inline-calendar-card {
   width: 300px;
+  border: 1px solid rgb(212, 212, 212);
+  padding: 10px;
+}
+
+.apply-btn{
+  padding: 20px;
 }
 
 

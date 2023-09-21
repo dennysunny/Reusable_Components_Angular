@@ -1,5 +1,5 @@
 
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import {NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,7 +13,6 @@ import { CalenderExampleComponent } from './calender-example/calender-example.co
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import {MatDatepickerModule} from '@angular/material/datepicker';
 
  @NgModule({
   declarations: [
@@ -29,8 +28,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     AppRoutingModule,
     ReusableComponentsModule,
     FormsModule,
-    BrowserAnimationsModule,
-    MatDatepickerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

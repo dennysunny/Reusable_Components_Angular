@@ -13,7 +13,39 @@
 @import 'material-icons/iconfont/material-icons.css';
 
 /* styles.scss or your custom CSS file */
+
+.mat-calendar-body-label{  visibility: hidden;}
+
+.mat-calendar-table{
+  padding: 5px;
+}
+
+.mat-calendar-table-header th {
+  text-align: center;
+  color: #1e06a6;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: monospace;
+}
+
+.mat-calendar-body-cell-content {
+  color: #6f4aff;
+  font-weight: 600;
+}
+
 .mat-calendar-body-selected {
-    background-color: #1e06a6; /* Change the background color of the selected date */
-  }
+  background-color: #1e06a6;
+  color: white;
+  font-weight: 700;
+}
+.mat-calendar-body-in-range::before {
+  background: #1e06a6;
+  color: white;
+}
+
+.mat-calendar-table-header-divider::after{
+  background-color: rgb(0 0 0 / 0%);
+}
+
+
   

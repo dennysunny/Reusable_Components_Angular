@@ -40,19 +40,20 @@ dateFormat="dd.mm.yy"
 <mat-card  class="demo-inline-calendar-card" >
 
     <mat-calendar
+    class="custom"
+    [headerComponent]="customHeader"
     [dateFilter]= "disableWeekendsFilter"
     [selected]="selectedRangeValue"
     (selectedChange)="selectedChange($event)">
     </mat-calendar>
-    <hr>
-    <button >Apply</button>
+    <mat-divider></mat-divider>
+    <div class="apply-btn">
+        <button (click)="outputDateRanges()">Apply</button>
+    </div>
 </mat-card>
 
-<mat-card  class="demo-inline-calendar-card" >
-    Start Date :{{selectedRangeValue.start}}
-    <hr>
-    End Date :{{selectedRangeValue.end}}
-</mat-card>
+
+
 
 
 
