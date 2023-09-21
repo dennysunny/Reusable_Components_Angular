@@ -6,7 +6,8 @@
 </div>
 
 
-<app-calender *ngIf="date1 && date2"
- [selectedRangeValue] = date1
+<app-calender *ngIf="date1 || date2"
+
+ [weekendFilter]="true"
 ></app-calender>
 

@@ -37,15 +37,26 @@ dateFormat="dd.mm.yy"
     
   <p>Selected date: {{selected}}</p> -->
 
-
 <mat-card  class="demo-inline-calendar-card" >
+
     <mat-calendar
-    [selected]="selectedRangeValue" 
+    [dateFilter]= "disableWeekendsFilter"
+    [selected]="selectedRangeValue"
     (selectedChange)="selectedChange($event)">
     </mat-calendar>
     <hr>
     <button >Apply</button>
 </mat-card>
+
+<mat-card  class="demo-inline-calendar-card" >
+    Start Date :{{selectedRangeValue.start}}
+    <hr>
+    End Date :{{selectedRangeValue.end}}
+</mat-card>
+
+
+
+
 
 
   

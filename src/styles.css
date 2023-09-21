@@ -9,3 +9,11 @@
 @import "primeng/resources/primeng.css"; */
 
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+@import 'material-icons/iconfont/material-icons.css';
+
+/* styles.scss or your custom CSS file */
+.mat-calendar-body-selected {
+    background-color: #1e06a6; /* Change the background color of the selected date */
+  }
+  

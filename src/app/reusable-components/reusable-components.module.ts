@@ -23,6 +23,7 @@ import {
   MAT_DATE_RANGE_SELECTION_STRATEGY,
 } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AccordionComponent,
@@ -46,7 +47,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatDatepickerModule,
     MatCardModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatIconModule
   ],
   exports: [
     AccordionComponent,

@@ -1,6 +1,8 @@
-import { Component, EventEmitter, Input, Output} from '@angular/core';
-import { DateRange } from '@angular/material/datepicker';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Inject, Input, OnDestroy, Output} from '@angular/core';
+import { DateAdapter, MAT_DATE_FORMATS, MatDateFormats } from '@angular/material/core';
+import { DateRange, MatCalendar } from '@angular/material/datepicker';
 import  moment from 'moment';
+import { Subject, takeUntil } from 'rxjs';
 
 
 @Component({
@@ -12,8 +14,14 @@ import  moment from 'moment';
 export class CalenderComponent {
 
 
-  @Input() selectedRangeValue: DateRange<Date> | undefined;
+  @Input() weekendFilter :boolean | undefined
+  selectedRangeValue: DateRange<Date> = new DateRange<Date>(null,null)
   @Output() selectedRangeValueChange = new EventEmitter<DateRange<Date>>();
+
+  disableWeekendsFilter = (d: Date): boolean => {
+    return this.weekendFilter ? (d.getDay() !== 0 && d.getDay() !== 6) : false
+}
+  
 
     selectedChange(m: any) {
         if (!this.selectedRangeValue?.start || this.selectedRangeValue?.end) {
@@ -28,15 +36,14 @@ export class CalenderComponent {
             }
         }
         this.selectedRangeValueChange.emit(this.selectedRangeValue);
-        console.log("Selected Range", m);
+        console.log("Selected Events:", m);
+        console.log("Selected Dates :", this.selectedRangeValue);
+        
         
     }
 
+   
 
   }
 
-
-  
-  
-
-
+ 
