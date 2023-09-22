@@ -39,6 +39,7 @@ export class InputComponent {
     this.openPopUp = false;
     this.clickStatus = 'clicked cancel';
   }
+  
 }
 
 
