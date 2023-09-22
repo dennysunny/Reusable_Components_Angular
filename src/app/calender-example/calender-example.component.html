@@ -5,14 +5,24 @@
     <input type="date" [(ngModel)] = "date2">
 </div> -->
 
+<mat-form-field class="form-field">
+    <mat-label>Choose Dates</mat-label>
+    <input matInput type="text" [(ngModel)]="startDate">
+    <button  class = "icons" (click)="openCalendar=!openCalendar">
+      <mat-icon>event</mat-icon>
+    </button>
+</mat-form-field>
+  
+  
 
-<app-calender *ngIf="isCalenderEnabled"
+<app-calender *ngIf="openCalendar"
  [startDate]="startDate"
  [endDate]="endDate"
  [weekendFilter]="false"
  (selectedRangeValueChange) = "selectedDateRange($event)"
  (closeCalendar)="closeCalendar($event)"
 ></app-calender>
+
 
 
 

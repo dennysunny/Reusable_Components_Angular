@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { DateRange } from '@angular/material/datepicker';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-calender-example',
@@ -7,10 +6,14 @@ import { DateRange } from '@angular/material/datepicker';
   styleUrls: ['./calender-example.component.css'],
 })
 export class CalenderExampleComponent {
-  startDate = new Date();
-  lastDate = new Date();
-  endDate = new Date(this.lastDate.setDate(this.startDate.getDate() + 5));
-  isCalenderEnabled: boolean = true;
+  // startDate = new Date();
+  // lastDate = new Date();
+  // endDate = new Date(this.lastDate.setDate(this.startDate.getDate() + 1));
+  
+  startDate = new Date()
+  endDate! :Date;
+
+  openCalendar :boolean = false;
 
   selectedDateRange(event: any) {
     console.log('Date Range Start', event.start);
@@ -21,7 +24,7 @@ export class CalenderExampleComponent {
   }
 
   closeCalendar(event: boolean) {
-    this.isCalenderEnabled = event;
+    this.openCalendar = event;
     console.log('Calender Closed');
   }
 }

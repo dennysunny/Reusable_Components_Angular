@@ -9,6 +9,7 @@ import { DateAdapter } from '@angular/material/core';
 import { DateRange } from '@angular/material/datepicker';
 import { CustomHeader } from './custom-header-component';
 import { CustomDateAdapter } from './custom-date-adapter';
+import { SharedDateService } from './shared-date-service'
 
 @Component({
   selector: 'app-calender',
@@ -31,8 +32,17 @@ export class CalenderComponent {
   @Output() selectedRangeValueChange = new EventEmitter<DateRange<Date>>();
   @Output() closeCalendar = new EventEmitter<boolean>();
 
-  // defaultStartDate: Date | null = new Date('2023-09-11');
-  // defaultEndDate: Date | null = new Date('2023-09-14');
+  // dates :any;
+
+  // constructor(private dateService: SharedDateService) {
+  //   this.dates = this.dateService.getDate();
+  //   console.log("Datessss",this.dates);
+    
+  //   if(this.dates){
+  //     this.selectedRangeValue = new DateRange<Date>(this.dates.start, this.dates.end);
+  //   }
+  //  }
+
   selectedRangeValue = new DateRange<Date>(this.startDate, this.endDate);
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -46,6 +56,8 @@ export class CalenderComponent {
         this.endDate
       );
     }
+     
+
   }
 
   disableWeekendsFilter = (d: Date): boolean => {
@@ -65,6 +77,8 @@ export class CalenderComponent {
       }
     }
     this.selectedRangeValueChange.emit(this.selectedRangeValue);
+    //this.dateService.setDate(this.selectedRangeValue)
+    
   }
 
   outputDateRanges() {
