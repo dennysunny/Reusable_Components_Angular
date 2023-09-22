@@ -1,24 +1,42 @@
-import { Component, ChangeDetectionStrategy, OnDestroy, Inject, ChangeDetectorRef } from "@angular/core";
-import { MatButtonModule } from "@angular/material/button";
-import { DateAdapter, MAT_DATE_FORMATS, MatDateFormats, MatNativeDateModule } from "@angular/material/core";
-import { MatCalendar, MatDatepicker, MatDatepickerModule } from "@angular/material/datepicker";
-import { MatIconModule } from "@angular/material/icon";
-import { Subject, takeUntil } from "rxjs";
+import {
+  Component,
+  ChangeDetectionStrategy,
+  OnDestroy,
+  Inject,
+  ChangeDetectorRef,
+} from '@angular/core';
+import { MatCalendar } from '@angular/material/datepicker';
+import {
+  DateAdapter,
+  MAT_DATE_FORMATS,
+  MatDateFormats,
+} from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { Subject, takeUntil } from 'rxjs';
 
-/** Custom header component for datepicker. */
+/* 
+The purpose of this code is to ensure that 
+when the MatCalendar's state changes, 
+Angular's change detection mechanism is triggered. 
+This is important because changes in the calendar state may affect 
+the rendering of the calendar or its related  components. 
+*/
+
+/* Custom header component for datepicker. */
 @Component({
-  selector: 'example-header',
+  selector: 'custom-header',
   styles: [
     `
       .custom-header {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        padding: 10px;
+        padding: 0px 0px 16px 0px;
       }
 
       .month-header {
-        color: rgb(30 6 166);
+        color: #223484;
         border: 2px solid rgb(212, 212, 212);
         padding: 5px;
         border-radius: 5px;
@@ -38,60 +56,53 @@ import { Subject, takeUntil } from "rxjs";
       }
 
       .small-icon {
-        font-size: 18px;
-        color : grey;
-        }
-
-        .mat-calendar-table-header th:nth-child(1) span {
-  color: red;
-}
-
-        .mat-icon-button {
-  margin: 42px; /* Adjust the margin as needed */
-}
-
+        font-size: 14px;
+        color: grey;
+        cursor: pointer;
+      }
     `,
   ],
   template: `
     <div class="custom-header">
       <div class="month-header">
         <div class="month">
-          <span>{{ periodLabel }}</span>
+          <span>{{ monthLabel }}</span>
           <div class="icons">
-            <button mat-icon-button (click)="previousClicked('month')">
+            <button mat-icon-button (click)="previousButton('month')">
               <mat-icon class="small-icon">keyboard_arrow_up</mat-icon>
             </button>
-
-            <button  mat-icon-button (click)="nextClicked('month')">
-              <mat-icon class="small-icon" >keyboard_arrow_down</mat-icon>
+            <button mat-icon-button (click)="nextButton('month')">
+              <mat-icon class="small-icon">keyboard_arrow_down</mat-icon>
             </button>
           </div>
         </div>
       </div>
-      <button mat-icon-button (click)="closeCalendar()" >
-        <mat-icon class="small-icon">close</mat-icon>
-      </button>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [MatButtonModule, MatIconModule]
+  imports: [MatButtonModule, MatIconModule],
 })
-
 export class CustomHeader<D> implements OnDestroy {
   private _destroyed = new Subject<void>();
-  
 
   constructor(
     private _calendar: MatCalendar<D>,
     private _dateAdapter: DateAdapter<D>,
-
     @Inject(MAT_DATE_FORMATS) private _dateFormats: MatDateFormats,
-    cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef /* 
+      The ChangeDetectorRef allows to manually trigger change detection 
+      within the component. 
+      It has methods -> markForCheck() and detectChanges(), 
+      which are used to notify Angular that changes have occurred 
+      and the view should be updated.*/
   ) {
     _calendar.stateChanges
       .pipe(takeUntil(this._destroyed))
-      .subscribe(() => cdr.markForCheck());
+      /* takeUntil(this._destroyed) is used to ensure that 
+              the subscription is automatically unsubscribed 
+              when the component is destroyed */
+      .subscribe(() => this.cdr.markForCheck());
   }
 
   ngOnDestroy() {
@@ -99,31 +110,24 @@ export class CustomHeader<D> implements OnDestroy {
     this._destroyed.complete();
   }
 
-  get periodLabel() {
-    return this._dateAdapter
-      .format(
-        this._calendar.activeDate,
-        this._dateFormats.display.monthYearLabel
-      )
-      .toLocaleUpperCase();
+  get monthLabel() {
+    return this._dateAdapter.format(
+      this._calendar.activeDate,
+      this._dateFormats.display.monthYearLabel
+    );
   }
 
-  previousClicked(mode: 'month' | 'year') {
+  previousButton(mode: 'month' | 'year') {
     this._calendar.activeDate =
       mode === 'month'
         ? this._dateAdapter.addCalendarMonths(this._calendar.activeDate, -1)
         : this._dateAdapter.addCalendarYears(this._calendar.activeDate, -1);
   }
 
-  nextClicked(mode: 'month' | 'year') {
+  nextButton(mode: 'month' | 'year') {
     this._calendar.activeDate =
       mode === 'month'
         ? this._dateAdapter.addCalendarMonths(this._calendar.activeDate, 1)
         : this._dateAdapter.addCalendarYears(this._calendar.activeDate, 1);
-  }
-
-  closeCalendar() {
-    console.log("close");
-    
   }
 }

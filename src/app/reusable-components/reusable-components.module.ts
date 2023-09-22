@@ -17,14 +17,13 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-import {
-  MatDateRangeSelectionStrategy,
-  DateRange,
-  MAT_DATE_RANGE_SELECTION_STRATEGY,
-} from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+
+
+
+
 @NgModule({
   declarations: [
     AccordionComponent,
@@ -36,7 +35,7 @@ import { MatDividerModule } from '@angular/material/divider';
     TableNormalComponent,
     PopupComponent,
     FormDataComponent,
-    CalenderComponent
+    CalenderComponent,
   ],
   imports: [
     CommonModule,
@@ -50,7 +49,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    
   ],
   exports: [
     AccordionComponent,
@@ -63,7 +63,8 @@ import { MatDividerModule } from '@angular/material/divider';
     PopupComponent,
     FormDataComponent,
     CalenderComponent,
-    MatDividerModule
+    MatDividerModule,
+    MatIconModule
   ]
 })
 export class ReusableComponentsModule { }

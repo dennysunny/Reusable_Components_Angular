@@ -1,13 +1,11 @@
-
-button{
-  background-color: rgb(24, 24, 109);
+button {
+  background-color: #223484;
   color: white;
   border: none;
   border-radius: 2px;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 25px;
   cursor: pointer;
   float: right;
-  width: 25%;
   display: flex;
   justify-content: center;
 }
@@ -17,11 +15,24 @@ button{
 .demo-inline-calendar-card {
   width: 300px;
   border: 1px solid rgb(212, 212, 212);
+
+}
+
+.apply-btn {
   padding: 10px;
 }
 
-.apply-btn{
-  padding: 20px;
+.close-btn {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 20px 20px 0 0;
 }
 
 
+.small-icon {
+  font-size: 18px;
+  color: #223484;
+  cursor: pointer;
+  display: flex;
+  float: right;
+}

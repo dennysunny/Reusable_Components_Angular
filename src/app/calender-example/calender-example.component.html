@@ -6,9 +6,13 @@
 </div> -->
 
 
-<app-calender 
-
+<app-calender *ngIf="isCalenderEnabled"
+ [startDate]="startDate"
+ [endDate]="endDate"
  [weekendFilter]="false"
+ (selectedRangeValueChange) = "selectedDateRange($event)"
+ (closeCalendar)="closeCalendar($event)"
 ></app-calender>
 
-<!-- *ngIf="date1 || date2" -->
+
+

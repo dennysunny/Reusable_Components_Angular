@@ -3,13 +3,10 @@ import {
   EventEmitter,
   Input,
   Output,
+  SimpleChanges,
 } from '@angular/core';
-import {
-  DateAdapter,
-  MAT_DATE_FORMATS,
-  MatDateFormats,
-} from '@angular/material/core';
-import { DateRange, MatCalendar } from '@angular/material/datepicker';
+import { DateAdapter } from '@angular/material/core';
+import { DateRange } from '@angular/material/datepicker';
 import { CustomHeader } from './custom-header-component';
 import { CustomDateAdapter } from './custom-date-adapter';
 
@@ -27,10 +24,29 @@ import { CustomDateAdapter } from './custom-date-adapter';
 export class CalenderComponent {
   customHeader = CustomHeader;
 
+  @Input() startDate!: Date;
+  @Input() endDate!: Date;
   @Input() weekendFilter: boolean | undefined;
-  @Output() selectedRangeValueChange = new EventEmitter<DateRange<Date>>();
 
-  selectedRangeValue: DateRange<Date> = new DateRange<Date>(null, null);
+  @Output() selectedRangeValueChange = new EventEmitter<DateRange<Date>>();
+  @Output() closeCalendar = new EventEmitter<boolean>();
+
+  // defaultStartDate: Date | null = new Date('2023-09-11');
+  // defaultEndDate: Date | null = new Date('2023-09-14');
+  selectedRangeValue = new DateRange<Date>(this.startDate, this.endDate);
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if ('startDate' in changes || 'endDate' in changes) {
+      // console.log("Changes");
+      // console.log("Start date",this.startDate );
+      // console.log("End date:", this.endDate);
+
+      this.selectedRangeValue = new DateRange<Date>(
+        this.startDate,
+        this.endDate
+      );
+    }
+  }
 
   disableWeekendsFilter = (d: Date): boolean => {
     return this.weekendFilter ? d.getDay() !== 0 && d.getDay() !== 6 : true;
@@ -49,30 +65,13 @@ export class CalenderComponent {
       }
     }
     this.selectedRangeValueChange.emit(this.selectedRangeValue);
-    console.log('Selected Events:', m);
   }
 
   outputDateRanges() {
-    console.log('Event', this.selectedRangeValue);
     this.selectedRangeValueChange.emit(this.selectedRangeValue);
   }
 
-  headerData = {
-    headerTemplate: `
-        <div class="custom-header">
-          <ng-container *ngFor="let day of days">
-            {{ day | slice:0:3 }}
-          </ng-container>
-        </div>
-      `,
-    days: [
-      'Sunday',
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-    ],
-  };
+  closeCalender() {
+    this.closeCalendar.emit(false);
+  }
 }
