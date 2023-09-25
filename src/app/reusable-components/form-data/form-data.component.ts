@@ -9,6 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormDataComponent implements OnInit {
 
   commonForm! :FormGroup;
+  openCalendar :boolean = false;
+  startDate = new Date();
+  endDate! :Date;
 
   constructor(private formBuilder : FormBuilder) { }
 
@@ -16,10 +19,25 @@ export class FormDataComponent implements OnInit {
 
     this.commonForm = this.formBuilder.group({
 
-      id : ['', {validators : [Validators.required]}]
+      id : ['', {validators : [Validators.required]}],
+      AdmitDate : [this.startDate],
+      DischsrgeDate : [this.endDate]
       
 
     })
+  }
+
+  selectedDateRange(event: any) {
+    console.log('Date Range Start', event.start);
+    console.log('Date Range End', event.end);
+
+    this.startDate = event.start;
+    this.endDate = event.end;
+  }
+
+  closeCalendar(event: boolean) {
+    this.openCalendar = event;
+    console.log('Calender Closed');
   }
 
 }

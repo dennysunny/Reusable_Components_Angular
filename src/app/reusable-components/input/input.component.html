@@ -3,8 +3,9 @@
     <button (click)="isBold = !isBold">Bold</button>
     <button (click)="isItalic = !isItalic">Italic</button>
     <button (click)="isUnderline = !isUnderline">Underline</button>
-    <section>Font Size:
-    <input type="number" [(ngModel)]="fontSize" min="8" max="72" />
+    <section>
+      Font Size:
+      <input type="number" [(ngModel)]="fontSize" min="8" max="72" />
     </section>
   </div>
   <textarea
@@ -20,22 +21,15 @@
   >
   </textarea>
   <p class="post" (click)="onSubmitComment()">Post</p>
- 
 </div>
 
-<app-popup *ngIf="openPopUp" 
-[popupMessage] = "Message"
-[popupPositiveButton] = "PositiveAction"
-[popupNegetiveButton] = "NegetiveAction"
-(okayClicked)="handleOkayClick()"
-(cancelClicked)="handleCancelClick()"
+<app-popup
+  *ngIf="openPopUp"
+  [popupMessage]="Message"
+  [popupPositiveButton]="PositiveAction"
+  [popupNegetiveButton]="NegetiveAction"
+  (okayClicked)="handleOkayClick()"
+  (cancelClicked)="handleCancelClick()"
 ></app-popup>
-
-<app-input></app-input>
-
-
-
-
-
 
 

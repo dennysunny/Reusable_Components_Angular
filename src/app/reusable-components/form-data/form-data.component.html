@@ -40,6 +40,39 @@
                </div>
            </div>
 
+           <div class="form-container">
+            <form [formGroup]="commonForm" >
+
+              <div class="form-group">
+                <label for="id">ID:</label>
+                <input matInput type="text" [(ngModel)]="startDate" formControlName="id">
+                <button  class = "icons" (click)="openCalendar=!openCalendar">
+                  <mat-icon>event</mat-icon>
+                </button>
+                <app-calender *ngIf="openCalendar" >
+                </app-calender>
+                <div
+                  *ngIf="commonForm.get('id')?.hasError('required') && commonForm.get('id')?.touched"
+                  class="error-message"
+                >
+                  ID is required.
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="admitDate">Admit Date:</label>
+                <input type="text" id="admitDate" formControlName="AdmitDate" />
+              </div>
+              <div class="form-group">
+                <label for="dischargeDate">Discharge Date:</label>
+                <input type="text" id="dischargeDate" formControlName="DischsrgeDate" />
+              </div>
+              <button type="submit" [disabled]="commonForm.invalid">Submit</button>
+            </form>
+          </div>
+          
+          
+
           
 
         </div>
@@ -48,4 +81,6 @@
     </div>
 
 </div>
+
+
 

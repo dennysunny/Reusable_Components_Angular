@@ -83,6 +83,7 @@ export class CalenderComponent {
 
   outputDateRanges() {
     this.selectedRangeValueChange.emit(this.selectedRangeValue);
+    this.closeCalender()
   }
 
   closeCalender() {

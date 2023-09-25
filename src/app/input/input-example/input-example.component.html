@@ -1,3 +1,13 @@
 
 <app-input></app-input>
 
+<button (click)="openCalendar = !openCalendar" >Calender</button>
+
+<app-calender *ngIf="openCalendar"
+ [startDate]="startDate"
+ [endDate]="endDate"
+ [weekendFilter]="false"
+ (selectedRangeValueChange) = "selectedDateRange($event)"
+ (closeCalendar)="closeCalendar($event)"
+></app-calender>
+
