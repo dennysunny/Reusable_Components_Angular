@@ -22,6 +22,18 @@ import { SharedDateService } from './shared-date-service'
     },
   ],
 })
+
+/*
+This class can be called from other components and accepts below inputs
+<app-calender *ngIf="openCalendar"
+ [startDate]="startDate"
+ [endDate]="endDate"
+ [weekendFilter]="false"
+ (selectedRangeValueChange) = "selectedDateRange($event)"
+ (closeCalendar)="closeCalendar($event)"
+></app-calender>
+*/
+
 export class CalenderComponent {
   customHeader = CustomHeader;
 
